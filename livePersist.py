@@ -28,4 +28,4 @@ subprocess.run(["mkdir", "-p", "/mnt/my_usb"])
 
 subprocess.run(["mount", "/dev/mapper/my_usb", "/mnt/my_usb"])
 
-subprocess.run(["echo", "\"/ union \" > /mnt/my_usb/persistence.conf'])
+subprocess.run(["echo", "\"/ union \" > /mnt/my_usb/persistence.conf"])
