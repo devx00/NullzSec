@@ -4,17 +4,17 @@ import subprocess
 
 # Choose Encryption or Decryption
 
-answer = input("Encrypt or Decrypt? ")
+answer = input("Encrypt or Decrypt?\n ")
 
 # Encryption
 
 if (answer == "Encrypt"):
 
-  data = input("What is the path of the data file you would like to encrypt? ")
+  data = input("What is the path of the data file you would like to encrypt?\n ")
 
-  new_file = input("What would you like to call the new encrypted file? ")
+  new_file = input("What would you like to call the new encrypted file?\n ")
 
-  pubkey = input("What is the path of the public key? ")
+  pubkey = input("What is the path of the public key?\n ")
 
 
   subprocess.run(["openssl", "rand","-out", "randompass.txt", "-base64", "120"])
@@ -28,11 +28,11 @@ if (answer == "Encrypt"):
 
 elif (answer == "Decrypt"):
 
-  privkey = input("What is the path to your private key? ")
+  privkey = input("What is the path to your private key?\n ")
 
-  file_name = input("What is the path of the encrypted data file? ")
+  file_name = input("What is the path of the encrypted data file?\n ")
 
-  data = input("What would you like to name the new data file? ")
+  data = input("What would you like to name the new data file?\n ")
 
   subprocess.run(["openssl", "rsautl", "-decrypt", "-inkey", privkey, "-in", "randompass.enc","-out", "decodedpass.txt"])
 
