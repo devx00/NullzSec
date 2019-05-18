@@ -2,7 +2,7 @@
 
 import subprocess
 
-# Choose Encryptionnir Decryption
+# Choose Encryption or Decryption
 
 answer = input("Encrypt or Decrypt? ")
 
@@ -28,7 +28,7 @@ if (answer == "Encrypt"):
 
 elif (answer == "Decrypt"):
 
-  privkey = input("What is the path to      your private key? ")
+  privkey = input("What is the path to your private key? ")
 
   file_name = input("What the path of the encrypted data file? ")
 
@@ -37,7 +37,7 @@ elif (answer == "Decrypt"):
   subprocess.run(["openssl", "rsautl", "-decrypt", "-inkey", privkey, "-in", "randompass.enc","-out", "decodedpass.txt"])
 
 
-  subprocess.run(["openssl","enc", "-d",    "-aes-256-cbc", "-in", file_name,"-out",  data, "-pass", "file:decodedpass.txt"])
+  subprocess.run(["openssl","enc", "-d", "-aes-256-cbc", "-in", file_name,"-out",  data, "-pass", "file:decodedpass.txt"])
 
 else:
   print("Try Again. Input is case sensitive")
