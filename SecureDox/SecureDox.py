@@ -30,7 +30,7 @@ elif (answer == "Decrypt"):
 
   privkey = input("What is the path to your private key? ")
 
-  file_name = input("What the path of the encrypted data file? ")
+  file_name = input("What is the path of the encrypted data file? ")
 
   data = input("What would you like to name the new data file? ")
 
