@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 
+import os
 import subprocess
 
 # Choose Encryption or Decryption
@@ -20,12 +21,15 @@ if (answer == "1"):
     subprocess.run(["openssl", "rand","-out", "randompass.txt", "-base64", "120"])
 
     subprocess.run(["openssl", "enc", "-aes-256-cbc", "-salt", "-in", data, "-out",   new_file, "-pass", "file:randompass.txt"])
-
+0
     subprocess.run(["openssl", "rsautl","-encrypt", "-in", "randompass.txt", "-out"  , "randompass.enc", "-pubin", "-inkey",  pubkey])
 
+    subprocess(['rm', randompass.txt])
+
+    subprocess(['rm', data])
+
+    suborocess(['mv', new_file, '/media/vault'])
     
-    subprocess.run(["rm", "randompass.txt"])
-    subprocess.run(["mv", data, "msg"])
 
 # Decryption
 
@@ -42,8 +46,7 @@ elif (answer == "2"):
 
    subprocess.run(["openssl","enc", "-d", "-aes-256-cbc", "-in", file_name,"-out",  data, "-pass", "file:decodedpass.txt"])
   
-   subprocess.run(["rm", "decodedpass.txt",
-"keys"])
+   subprocess.run(["rm", "decodedpass.txt"])
    subprocess.run(["rm", "randompass.enc"])
 
 else:
